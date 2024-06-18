@@ -12,6 +12,10 @@
     #   url = "github:Cassin01/wf.nvim";
     #   flake = false;
     # };
+    project-nvim = {
+      url = "github:ahmedkhalf/project.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
