@@ -68,7 +68,7 @@ with final.pkgs.lib; let
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
-    # statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
+    statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
     nvim-treesitter-context # nvim-treesitter-context
     kanagawa-nvim # Kanagawa theme
     alpha-nvim # Start screen
@@ -76,11 +76,10 @@ with final.pkgs.lib; let
     toggleterm-nvim # Terminal toggler
     vim-illuminate # Highlight all instances of a word under the cursor
     tagbar # Sidebar with tags
-    ctags
-    nvim-ts-raindbow # Rainbow brackets
+    rainbow-delimiters-nvim # Rainbow delimiters
     vim-ragtag # TODO: do i need this?
     vim-eunuch # TODO: do i need this?
-    nvim-colorizer
+    nvim-colorizer-lua
 
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
@@ -95,7 +94,7 @@ with final.pkgs.lib; let
     indent-blankline-nvim
     vim-surround
     whitespace-nvim
-    Comment-nvim
+    comment-nvim
 
     # Useful utilities
     nvim-unception # Prevent nested neovim sessions | nvim-unception
