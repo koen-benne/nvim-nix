@@ -1,7 +1,7 @@
-if vim.g.did_load_kanagawa then
+if vim.g.did_load_kanagawa_plugin then
   return
 end
-vim.g.did_load_kanagawa = true
+vim.g.did_load_kanagawa_plugin = true
 
 vim.cmd "colorscheme kanagawa"
 
