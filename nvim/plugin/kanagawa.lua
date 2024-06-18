@@ -1,7 +1,7 @@
-if vim.g.did_load_colorscheme then
+if vim.g.did_load_kanagawa then
   return
 end
-vim.g.did_load_colorscheme = true
+vim.g.did_load_kanagawa = true
 
 local status_ok, kanagawa = pcall(require, "kanagawa")
 if not status_ok then
