@@ -2,6 +2,7 @@ if vim.g.did_load_gitsigns_plugin then
   return
 end
 vim.g.did_load_gitsigns_plugin = true
+
 local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
   return
