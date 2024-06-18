@@ -40,7 +40,8 @@ require('lualine').setup {
     },
   },
   options = {
-    theme = 'auto',
+    theme = 'kanagawa',
+    path = 1
   },
   -- Example top tabline configuration (this may clash with other plugins)
   -- tabline = {
