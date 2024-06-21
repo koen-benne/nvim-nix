@@ -20,6 +20,7 @@ lazylsp.setup {
     markdown = {},
     python = { "pyright", "ruff_lsp" },
     lua = { "lua_ls" },
+    nix = { "nil" },
     rust = { "rust_analyzer" },
     json = { "jsonls" },
     css = { "cssmodules" },
