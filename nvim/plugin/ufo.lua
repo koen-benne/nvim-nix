@@ -38,7 +38,7 @@ end
 
 ufo.setup({
   provider_selector = function(bufnr, filetype, buftype)
-    return {'treesitter', 'indent'}
+    return {'lsp', 'indent'}
   end,
   fold_virt_text_handler = handler
 })
