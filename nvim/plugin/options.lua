@@ -37,6 +37,9 @@ local options = {
     pumblend = 10,
     winblend = 10,
     conceallevel = 2,
+    fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
+    path = vim.o.path .. '**',
+    colorcolumn = '100'
 }
 
 vim.opt.shortmess:append "c"
@@ -58,6 +61,11 @@ vim.g.better_whitespace_filetypes_blacklist = {
   'TelescopePrompt',
   'alpha',
 }
+
+-- Enable true colour support
+if vim.fn.has('termguicolors') then
+  vim.o.termguicolors = true
+end
 
 -- Neovide opts
 if vim.g.neovide then

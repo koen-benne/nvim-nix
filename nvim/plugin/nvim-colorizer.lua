@@ -9,11 +9,11 @@ if not status_ok then
 end
 
 colorizer.setup {
-  filetypes = { 
-    "*";
-    conf = { RRGGBB = true; };
-    css = { rgb_fn = true; };
-    html = { names = false; };
-    rasi = { RRGGBBAA = true; }
+  filetypes = {
+    "*",
+    conf = { RRGGBB = true, },
+    css = { rgb_fn = true, },
+    html = { names = false, },
+    rasi = { RRGGBBAA = true, }
   },
 }
