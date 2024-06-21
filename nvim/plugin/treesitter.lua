@@ -7,7 +7,7 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
-
+-- Does this prevent it from being setup elsewhere?
 vim.g.skip_ts_context_comment_string_module = true
 
 ---@diagnostic disable-next-line: missing-fields
@@ -20,7 +20,7 @@ configs.setup {
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+  auto_install = false,
 
   -- List of parsers to ignore installing (for "all")
   -- ignore_install = { "" },
@@ -30,7 +30,7 @@ configs.setup {
 
   highlight = {
     enable = true,
-    disable = function(lang, buf)
+    disable = function(_, buf)
         local max_filesize = 100 * 1024 -- 100 KB
         local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
         if ok and stats and stats.size > max_filesize then
@@ -46,9 +46,12 @@ configs.setup {
   },
 }
 
-local status_ok, commentstring = pcall(require, "ts-context-commentstring")
-if not status_ok then
-  return
-end
+require('treesitter-context').setup {
+  max_lines = 3,
+}
 
-commentstring.setup()
+require('ts_context_commentstring').setup()
+
+-- Tree-sitter based folding
+-- vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
