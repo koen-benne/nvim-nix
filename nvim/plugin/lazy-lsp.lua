@@ -42,4 +42,3 @@ lazylsp.setup {
     -- cssmodules_ls = require "user.plugins.lsp.settings.cssmodules_ls",
   },
 }
-
