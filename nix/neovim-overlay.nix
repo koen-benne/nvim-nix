@@ -1,4 +1,4 @@
- This overlay, when applied to nixpkgs, adds the final neovim derivation to nixpkgs.
+# This overlay, when applied to nixpkgs, adds the final neovim derivation to nixpkgs.
 {inputs}: final: prev:
 with final.pkgs.lib; let
   pkgs = final;
@@ -31,7 +31,7 @@ with final.pkgs.lib; let
 
     # LSP
     lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
-    nvim-lspconfig
+    nvim-lspconfig # Auto config lsp
     lspsaga-nvim
     lspkind-nvim # vscode-like LSP pictograms | https://github.com/onsails/lspkind.nvim/
     SchemaStore-nvim
