@@ -93,6 +93,7 @@ with final.pkgs.lib; let
     vim-surround
     whitespace-nvim
     comment-nvim
+    nvim-ufo # Folding
 
     # Useful utilities
     nvim-unception # Prevent nested neovim sessions | nvim-unception
