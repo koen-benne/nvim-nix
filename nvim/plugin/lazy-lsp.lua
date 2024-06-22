@@ -8,7 +8,7 @@ if not status_lsp then
   return
 end
 
-require("user.plugins.lsp.handlers").setup()
+require("user.lsp.handlers").setup()
 
 lazylsp.setup {
   -- By default all available servers are set up. Exclude unwanted or misbehaving servers.
