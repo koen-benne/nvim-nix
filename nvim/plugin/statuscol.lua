@@ -6,7 +6,7 @@ vim.g.did_load_statuscol_plugin = true
 local builtin = require('statuscol.builtin')
 require('statuscol').setup {
   setopt = true,
-  relculright = true,
+  relculright = false,
   segments = {
     { text = { '%s' }, click = 'v:lua.ScSa' },
     {
