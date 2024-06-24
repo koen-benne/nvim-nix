@@ -17,14 +17,6 @@ with final.pkgs.lib; let
   # This is the helper function that builds the Neovim derivation.
   mkNeovim = pkgs.callPackage ./mkNeovim.nix { inherit pkgs-wrapNeovim; };
 
-  # A plugin can either be a package or an attrset, such as
-  # { plugin = <plugin>; # the package, e.g. pkgs.vimPlugins.nvim-cmp
-  #   config = <config>; # String; a config that will be loaded with the plugin
-  #   # Boolean; Whether to automatically load the plugin as a 'start' plugin,
-  #   # or as an 'opt' plugin, that can be loaded with `:packadd!`
-  #   optional = <true|false>; # Default: false
-  #   ...
-  # }
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     nvim-treesitter.withAllGrammars
@@ -36,7 +28,7 @@ with final.pkgs.lib; let
     # lspkind-nvim # vscode-like LSP pictograms | https://github.com/onsails/lspkind.nvim/
     # SchemaStore-nvim
     # copilot-lua
-    # nvim-cmp # https://github.com/hrsh7th/nvim-cmp
+    nvim-cmp # https://github.com/hrsh7th/nvim-cmp
     # cmp_luasnip # snippets autocompletion extension for nvim-cmp
     # luasnip # snippets | https://github.com/l3mon4d3/luasnip/
     # cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
@@ -73,7 +65,7 @@ with final.pkgs.lib; let
     kanagawa-nvim # Kanagawa theme
     # alpha-nvim # Start screen
     # neo-tree-nvim # File tree
-    # toggleterm-nvim # Terminal toggler
+    toggleterm-nvim # Terminal toggler
     vim-illuminate # Highlight all instances of a word under the cursor
     tagbar # Sidebar with tags
     rainbow-delimiters-nvim # Rainbow delimiters
