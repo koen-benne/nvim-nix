@@ -27,9 +27,9 @@ with final.pkgs.lib; let
     # lspsaga-nvim
     # SchemaStore-nvim
     # copilot-lua
-    nvim-cmp # https://github.com/hrsh7th/nvim-cmp
-    cmp_luasnip # snippets autocompletion extension for nvim-cmp
-    luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+    # nvim-cmp # https://github.com/hrsh7th/nvim-cmp
+    # cmp_luasnip # snippets autocompletion extension for nvim-cmp
+    # luasnip # snippets | https://github.com/l3mon4d3/luasnip/
     # cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
     # cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
     # cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
