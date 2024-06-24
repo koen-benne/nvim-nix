@@ -64,7 +64,7 @@ with final.pkgs.lib; let
     nvim-treesitter-context # nvim-treesitter-context
     kanagawa-nvim # Kanagawa theme
     # alpha-nvim # Start screen
-    # neo-tree-nvim # File tree
+    neo-tree-nvim # File tree
     toggleterm-nvim # Terminal toggler
     vim-illuminate # Highlight all instances of a word under the cursor
     tagbar # Sidebar with tags

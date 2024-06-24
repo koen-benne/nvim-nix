@@ -1,7 +1,7 @@
-vim.g.did_load_neo_tree_plugin = true
 if vim.g.did_load_neo_tree_plugin then
   return
 end
+vim.g.did_load_neo_tree_plugin = true
 
 local status_ok, neo_tree = pcall(require, "neo-tree")
 if not status_ok then
