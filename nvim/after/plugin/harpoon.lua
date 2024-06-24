@@ -1,7 +1,7 @@
+vim.g.did_load_harpoon_plugin = true
 if vim.g.did_load_harpoon_plugin then
   return
 end
-vim.g.did_load_harpoon_plugin = true
 
 local status_ok, harpoon = pcall(require, "harpoon")
 if not status_ok then

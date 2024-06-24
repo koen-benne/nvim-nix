@@ -1,7 +1,7 @@
+vim.g.did_load_toggleterm_plugin = true
 if vim.g.did_load_toggleterm_plugin then
   return
 end
-vim.g.did_load_toggleterm_plugin = true
 
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then

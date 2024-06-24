@@ -1,7 +1,7 @@
+vim.g.did_load_nvim_dap_plugin = true
 if vim.g.did_load_nvim_dap_plugin then
   return
 end
-vim.g.did_load_nvim_dap_plugin = true
 
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then

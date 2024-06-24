@@ -1,7 +1,7 @@
+vim.g.did_load_whitespace_plugin = true
 if vim.g.did_load_whitespace_plugin then
   return
 end
-vim.g.did_load_whitespace_plugin = true
 
 local status, whitespace = pcall(require, "whitespace-nvim")
 if not status then

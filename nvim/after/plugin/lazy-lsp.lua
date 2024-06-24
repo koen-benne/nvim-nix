@@ -1,7 +1,7 @@
+vim.g.did_load_lazylsp_plugin = true
 if vim.g.did_load_lazylsp_plugin then
   return
 end
-vim.g.did_load_lazylsp_plugin = true
 
 local status_lsp, lazylsp = pcall(require, "lazy-lsp")
 if not status_lsp then
