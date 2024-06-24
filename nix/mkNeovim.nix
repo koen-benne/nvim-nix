@@ -93,7 +93,6 @@ with lib;
       buildPhase = ''
         mkdir -p $out/nvim
         mkdir -p $out/lua
-        mkdir -p $out/lazy
         rm init.lua
       '';
 
@@ -102,8 +101,6 @@ with lib;
         rm -r after
         cp -r lua $out/lua
         rm -r lua
-        cp -r lazy $out/lazy
-        rm -r lazy
         cp -r * $out/nvim
       '';
     };
@@ -147,13 +144,6 @@ with lib;
       + ''
         vim.opt.rtp:prepend('${nvimRtp}/nvim')
         vim.opt.rtp:prepend('${nvimRtp}/after')
-
-        -- Prepend the lazy directory for lazy-loaded plugins
-        vim.api.nvim_create_autocmd("VimEnter", {
-            callback = function()
-                vim.opt.rtp:prepend('${nvimRtp}/lazy')
-            end
-        })
       '';
 
     # Add arguments to the Neovim wrapper script
