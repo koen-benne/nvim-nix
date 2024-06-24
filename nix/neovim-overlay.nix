@@ -25,12 +25,11 @@ with final.pkgs.lib; let
     # lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
     # nvim-lspconfig # Auto config lsp
     # lspsaga-nvim
-    # lspkind-nvim # vscode-like LSP pictograms | https://github.com/onsails/lspkind.nvim/
     # SchemaStore-nvim
     # copilot-lua
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
-    # cmp_luasnip # snippets autocompletion extension for nvim-cmp
-    # luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+    cmp_luasnip # snippets autocompletion extension for nvim-cmp
+    luasnip # snippets | https://github.com/l3mon4d3/luasnip/
     # cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
     # cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
     # cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
