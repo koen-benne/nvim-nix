@@ -1,7 +1,7 @@
-vim.g.did_load_telescope_plugin = true
 if vim.g.did_load_telescope_plugin then
   return
 end
+vim.g.did_load_telescope_plugin = true
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then

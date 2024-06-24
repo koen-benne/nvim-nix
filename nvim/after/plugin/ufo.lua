@@ -1,7 +1,7 @@
-vim.g.did_load_ufo_plugin = true
 if vim.g.did_load_ufo_plugin then
   return
 end
+vim.g.did_load_ufo_plugin = true
 
 local status, ufo = pcall(require, "ufo")
 if not status then

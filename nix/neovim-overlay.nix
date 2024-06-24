@@ -22,30 +22,30 @@ with final.pkgs.lib; let
     nvim-treesitter.withAllGrammars
 
     # LSP
-    # lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
-    # nvim-lspconfig # Auto config lsp
-    # lspsaga-nvim
-    # SchemaStore-nvim
-    # copilot-lua
-    # nvim-cmp # https://github.com/hrsh7th/nvim-cmp
-    # cmp_luasnip # snippets autocompletion extension for nvim-cmp
-    # luasnip # snippets | https://github.com/l3mon4d3/luasnip/
-    # cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
-    # cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
-    # cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
-    # cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
-    # cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
-    # cmp-cmdline # cmp command line suggestions
-    # cmp-cmdline-history # cmp command line history suggestions
-    # rust-tools-nvim
-    # crates-nvim
+    lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
+    nvim-lspconfig # Auto config lsp
+    lspsaga-nvim
+    SchemaStore-nvim
+    copilot-lua
+    nvim-cmp # https://github.com/hrsh7th/nvim-cmp
+    cmp_luasnip # snippets autocompletion extension for nvim-cmp
+    luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+    cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
+    cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
+    cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
+    cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
+    cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
+    cmp-cmdline # cmp command line suggestions
+    cmp-cmdline-history # cmp command line history suggestions
+    rust-tools-nvim
+    crates-nvim
 
     # Debugging
-    # nvim-dap
-    # nvim-dap-go
-    # nvim-dap-ui
-    # nvim-dap-virtual-text
-    # telescope-dap-nvim
+    nvim-dap
+    nvim-dap-go
+    nvim-dap-ui
+    nvim-dap-virtual-text
+    telescope-dap-nvim
 
     # Git integration
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
