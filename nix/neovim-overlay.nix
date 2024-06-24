@@ -19,33 +19,35 @@ with final.pkgs.lib; let
 
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
+    # packadd! needs to be called for each of the optional plugins
     nvim-treesitter.withAllGrammars
 
     # LSP
-    lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
-    nvim-lspconfig # Auto config lsp
-    lspsaga-nvim
-    SchemaStore-nvim
-    copilot-lua
-    nvim-cmp # https://github.com/hrsh7th/nvim-cmp
-    cmp_luasnip # snippets autocompletion extension for nvim-cmp
-    luasnip # snippets | https://github.com/l3mon4d3/luasnip/
-    cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
-    cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
-    cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
-    cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
-    cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
-    cmp-cmdline # cmp command line suggestions
-    cmp-cmdline-history # cmp command line history suggestions
-    rust-tools-nvim
-    crates-nvim
+    { plugin = lazy-lsp-nvim; optional = true; } # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
+    { plugin = nvim-lspconfig; optional = true; } # Auto config lsp
+    { plugin = lspsaga-nvim; optional = true; }
+    { plugin = SchemaStore-nvim; optional = true; }
+    { plugin = copilot-lua; optional = true; }
+
+    # Completion
+    { plugin = nvim-cmp; optional = true; }
+    { plugin = cmp_luasnip; optional = true; } # Snippets autocompletion extension for nvim-cmp
+    { plugin = luasnip; optional = true; } # Snippets
+    { plugin = cmp-nvim-lsp; optional = true; } # LSP as completion source
+    { plugin = cmp-nvim-lsp-signature-help; optional = true; }
+    { plugin = cmp-buffer; optional = true; } # Current buffer as completion source
+    { plugin = cmp-path; optional = true; } # File paths as completion source
+    { plugin = cmp-nvim-lua; optional = true; } # Neovim lua API as completion source
+    { plugin = cmp-cmdline; optional = true; } # cmp command line suggestions
+    { plugin = cmp-cmdline-history; optional = true; } # cmp command line history suggestions
+    { plugin = crates-nvim; optional = true; }
 
     # Debugging
-    nvim-dap
-    nvim-dap-go
-    nvim-dap-ui
-    nvim-dap-virtual-text
-    telescope-dap-nvim
+    { plugin = nvim-dap; optional = true; }
+    { plugin = nvim-dap-go; optional = true; }
+    { plugin = nvim-dap-ui; optional = true; }
+    { plugin = nvim-dap-virtual-text; optional = true; }
+    { plugin = telescope-dap-nvim; optional = true; }
 
     # Git integration
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
