@@ -1,7 +1,7 @@
+vim.g.did_load_autopairs_plugin = true
 if vim.g.did_load_autopairs_plugin then
   return
 end
-vim.g.did_load_autopairs_plugin = true
 
 -- Setup autopairs and autotags.
 local status_ok, npairs = pcall(require, "nvim-autopairs")
