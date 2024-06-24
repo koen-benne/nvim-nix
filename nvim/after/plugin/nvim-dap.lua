@@ -3,11 +3,11 @@ if vim.g.did_load_nvim_dap_plugin then
 end
 vim.g.did_load_nvim_dap_plugin = true
 
-vim.cmd { 'packadd!', 'nvim-dap' }
-vim.cmd { 'packadd!', 'nvim-dap-go' }
-vim.cmd { 'packadd!', 'nvim-dap-ui' }
-vim.cmd { 'packadd!', 'nvim-dap-virtual-text' }
-vim.cmd { 'packadd!', 'telescope-dap.nvim' }
+vim.cmd ( 'packadd! nvim-dap' )
+vim.cmd ( 'packadd! nvim-dap-go' )
+vim.cmd ( 'packadd! nvim-dap-ui' )
+vim.cmd ( 'packadd! nvim-dap-virtual-text' )
+vim.cmd ( 'packadd! telescope-dap.nvim' )
 
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then

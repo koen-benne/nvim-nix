@@ -3,17 +3,17 @@ if vim.g.did_load_cmp_plugin then
 end
 vim.g.did_load_cmp_plugin = true
 
-vim.cmd { 'packadd!', 'nvim-cmp' }
-vim.cmd { 'packadd!', 'cmp_luasnip' }
-vim.cmd { 'packadd!', 'luasnip' }
-vim.cmd { 'packadd!', 'cmp-nvim-lsp' }
-vim.cmd { 'packadd!', 'cmp-nvim-lsp-signature-help' }
-vim.cmd { 'packadd!', 'cmp-buffer' }
-vim.cmd { 'packadd!', 'cmp-path' }
-vim.cmd { 'packadd!', 'cmp-nvim-lua' }
-vim.cmd { 'packadd!', 'cmp-cmdline' }
-vim.cmd { 'packadd!', 'cmp-cmdline-history' }
-vim.cmd { 'packadd!', 'crates.nvim' }
+vim.cmd ( 'packadd! nvim-cmp' )
+vim.cmd ( 'packadd! cmp_luasnip' )
+vim.cmd ( 'packadd! luasnip' )
+vim.cmd ( 'packadd! cmp-nvim-lsp' )
+vim.cmd ( 'packadd! cmp-nvim-lsp-signature-help' )
+vim.cmd ( 'packadd! cmp-buffer' )
+vim.cmd ( 'packadd! cmp-path' )
+vim.cmd ( 'packadd! cmp-nvim-lua' )
+vim.cmd ( 'packadd! cmp-cmdline' )
+vim.cmd ( 'packadd! cmp-cmdline-history' )
+vim.cmd ( 'packadd! crates.nvim' )
 
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then

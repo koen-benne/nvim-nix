@@ -3,6 +3,8 @@ if vim.g.did_load_copilot_plugin then
 end
 vim.g.did_load_copilot_plugin = true
 
+vim.cmd ( 'packadd! copilot.lua' )
+
 -- vim.cmd [[
 --   imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
 --   let g:copilot_no_tab_map = v:true
