@@ -3,6 +3,8 @@ if vim.g.did_load_telescope_plugin then
 end
 vim.g.did_load_telescope_plugin = true
 
+vim.cmd ( 'packadd! telescope.nvim' )
+
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return
