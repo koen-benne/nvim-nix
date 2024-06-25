@@ -3,7 +3,7 @@ if vim.g.did_load_copilot_plugin then
 end
 vim.g.did_load_copilot_plugin = true
 
-vim.cmd ( 'packadd! copilot.lua' )
+vim.cmd ( 'packadd copilot.lua' )
 
 -- vim.cmd [[
 --   imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")

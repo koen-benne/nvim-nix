@@ -3,11 +3,11 @@ if vim.g.did_load_telescope_plugin then
 end
 vim.g.did_load_telescope_plugin = true
 
-vim.cmd ( 'packadd! telescope.nvim' )
-vim.cmd ( 'packadd! telescope-fzy-native.nvim' )
-vim.cmd ( 'packadd! telescope-media-files.nvim' )
-vim.cmd ( 'packadd! telescope-file-browser.nvim' )
-vim.cmd ( 'packadd! telescope-undo.nvim' )
+vim.cmd ( 'packadd telescope.nvim' )
+vim.cmd ( 'packadd telescope-fzy-native.nvim' )
+vim.cmd ( 'packadd telescope-media-files.nvim' )
+vim.cmd ( 'packadd telescope-file-browser.nvim' )
+vim.cmd ( 'packadd telescope-undo.nvim' )
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then

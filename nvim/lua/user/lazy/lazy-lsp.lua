@@ -3,10 +3,10 @@ if vim.g.did_load_lazylsp_plugin then
 end
 vim.g.did_load_lazylsp_plugin = true
 
-vim.cmd ( 'packadd! lazy-lsp.nvim' )
-vim.cmd ( 'packadd! nvim-lspconfig' )
-vim.cmd ( 'packadd! lspsaga.nvim' )
-vim.cmd ( 'packadd! SchemaStore.nvim' )
+vim.cmd ( 'packadd lazy-lsp.nvim' )
+vim.cmd ( 'packadd nvim-lspconfig' )
+vim.cmd ( 'packadd lspsaga.nvim' )
+vim.cmd ( 'packadd SchemaStore.nvim' )
 
 local status_lsp, lazylsp = pcall(require, "lazy-lsp")
 if not status_lsp then

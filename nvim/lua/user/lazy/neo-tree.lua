@@ -3,7 +3,7 @@ if vim.g.did_load_neo_tree_plugin then
 end
 vim.g.did_load_neo_tree_plugin = true
 
-vim.cmd ( 'packadd! neo-tree.nvim' )
+vim.cmd ( 'packadd neo-tree.nvim' )
 
 local status_ok, neo_tree = pcall(require, "neo-tree")
 if not status_ok then
