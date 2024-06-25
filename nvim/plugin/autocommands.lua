@@ -27,7 +27,9 @@ api.nvim_create_autocmd('TermOpen', {
 -- Lazy load some plugins
 vim.api.nvim_create_autocmd("UIEnter", {
     callback = function()
-      require ('user.lazy')
+      vim.defer_fn(function()
+        require('user.lazy')
+      end, 10)
     end
 })
 
