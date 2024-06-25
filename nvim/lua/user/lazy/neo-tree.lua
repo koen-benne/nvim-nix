@@ -225,7 +225,7 @@ neo_tree.setup({
   }
 })
 
-vim.keymap.set('n', '<C-t>', ":lua require'neo-tree.command'.execute{}<CR>")
+vim.keymap.set('n', '<C-t>', ":Neotree reveal<CR>")
 
 -- Neo tree
 local highlight = require("user.utils.highlights")
