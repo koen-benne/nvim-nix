@@ -86,7 +86,7 @@ with final.pkgs.lib; let
 
     # Useful utilities
     { plugin = nvim-unception; optional = true; } # Prevent nested neovim sessions | nvim-unception
-    { plugin = persistence-nvim; optional = true; }
+    persistence-nvim # For opening last session
     { plugin = which-key-nvim; optional = true; }
     { plugin = vim-wakatime; optional = true; }
     { plugin = editorconfig-nvim; optional = true; }

@@ -26,7 +26,6 @@ api.nvim_create_autocmd('TermOpen', {
 
 vim.api.nvim_create_autocmd("BufReadPre", {
   callback = function()
-    vim.cmd('packadd persistence.nvim')
     require('persistence').setup()
   end
 })
