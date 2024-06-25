@@ -169,7 +169,7 @@ local buttons = {
         button(" f ", "󰮗  Find File  ", ":Telescope find_files<CR>"),
         button(" r ", "  Recent Files  ", ":Telescope oldfiles<CR>"),
         button(" p ", "  Recent project  ", ":Telescope projects<CR>"),
-        button(" l ", "  Load last session  ", ":lua require('persistence').load({ last = true })<CR>"),
+        button(" l ", "  Load last session  ", ":lua require'persistence'.setup()<CR> :lua require'persistence'.load({ last = true })<CR>"),
         button(" q ", "󰅖  Quit  ", ":qa!<CR>"),
     },
     opts = {
