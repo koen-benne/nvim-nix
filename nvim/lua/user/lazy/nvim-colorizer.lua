@@ -3,6 +3,8 @@ if vim.g.did_load_nvim_colorizer_plugin then
 end
 vim.g.did_load_nvim_colorizer_plugin = true
 
+vim.cmd('packadd nvim-colorizer.lua')
+
 local status_ok, colorizer = pcall(require, "colorizer")
 if not status_ok then
   return

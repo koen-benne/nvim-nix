@@ -3,6 +3,8 @@ if vim.g.did_load_harpoon_plugin then
 end
 vim.g.did_load_harpoon_plugin = true
 
+vim.cmd('packadd harpoon')
+
 local status_ok, harpoon = pcall(require, "harpoon")
 if not status_ok then
 	return

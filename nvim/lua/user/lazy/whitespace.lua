@@ -3,6 +3,8 @@ if vim.g.did_load_whitespace_plugin then
 end
 vim.g.did_load_whitespace_plugin = true
 
+vim.cmd('packadd whitespace.nvim')
+
 local status, whitespace = pcall(require, "whitespace-nvim")
 if not status then
   return

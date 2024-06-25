@@ -19,7 +19,7 @@ with final.pkgs.lib; let
 
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
-    # packadd! needs to be called for each of the optional plugins
+    # packadd needs to be called for each of the optional plugins
     nvim-treesitter.withAllGrammars
 
     # LSP
@@ -50,7 +50,7 @@ with final.pkgs.lib; let
     { plugin = telescope-dap-nvim; optional = true; }
 
     # Git integration
-    gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
+    gitsigns-nvim
 
     # telescope and extensions
     { plugin= telescope-nvim; optional = true; }
@@ -60,42 +60,37 @@ with final.pkgs.lib; let
     { plugin= telescope-undo-nvim; optional = true; }
 
     # UI
-    { plugin = neo-tree-nvim; optional = true; } # File tree
-    lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
-    statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
-    nvim-treesitter-context # nvim-treesitter-context
-    kanagawa-nvim # Kanagawa theme
     alpha-nvim # Start screen
-    toggleterm-nvim # Terminal toggler
-    vim-illuminate # Highlight all instances of a word under the cursor
-    tagbar # Sidebar with tags
-    rainbow-delimiters-nvim # Rainbow delimiters
-    vim-ragtag # TODO: do i need this?
-    vim-eunuch # TODO: do i need this?
-    nvim-colorizer-lua
+    kanagawa-nvim # Kanagawa theme
+    { plugin = neo-tree-nvim; optional = true; } # File tree
+    { plugin = lualine-nvim; optional = true; } # Status line
+    { plugin = toggleterm-nvim; optional = true; } # Terminal toggler
+    { plugin = nvim-colorizer-lua; optional = true; }
+    { plugin = statuscol-nvim; optional = true; } # Status column
+    nvim-treesitter-context # nvim-treesitter-context
+    { plugin = vim-illuminate; optional = true; } # Highlight all instances of a word under the cursor
+    { plugin = rainbow-delimiters-nvim; optional = true; } # Rainbow delimiters
 
     # navigation/editing enhancement plugins
-    vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
-    nvim-surround # https://github.com/kylechui/nvim-surround/
-    nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
-    nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
-    leap-nvim # Jump to places
+    { plugin = vim-unimpaired; optional = true; } # predefined ] and [ navigation keymaps
+    { plugin = nvim-surround; optional = true; }
+    nvim-treesitter-textobjects
+    nvim-ts-context-commentstring
     nvim-autopairs # Automatically insert pairs
     nvim-ts-autotag # Automatically close typescript tags
-    harpoon
-    indent-blankline-nvim
-    vim-surround
-    whitespace-nvim
+    { plugin = harpoon; optional = true; }
+    { plugin = indent-blankline-nvim; optional = true; }
+    { plugin = whitespace-nvim; optional = true; }
     comment-nvim
-    nvim-ufo # Folding
+    { plugin = nvim-ufo; optional = true; } # Folding
 
     # Useful utilities
-    nvim-unception # Prevent nested neovim sessions | nvim-unception
-    vim-wakatime
+    { plugin = nvim-unception; optional = true; } # Prevent nested neovim sessions | nvim-unception
+    { plugin = persistence-nvim; optional = true; }
+    { plugin = which-key-nvim; optional = true; }
+    { plugin = vim-wakatime; optional = true; }
+    { plugin = editorconfig-nvim; optional = true; }
     vim-startuptime
-    persistence-nvim
-    which-key-nvim
-    editorconfig-nvim
 
     # libraries that other plugins depend on
     sqlite-lua
@@ -105,8 +100,6 @@ with final.pkgs.lib; let
     dressing-nvim
     nui-nvim
 
-    # bleeding-edge plugins from flake inputs
-    # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
     (mkNvimPlugin inputs.project-nvim "project.nvim") # Project management
   ];
 

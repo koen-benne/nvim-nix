@@ -3,6 +3,8 @@ if vim.g.did_load_lualine_plugin then
 end
 vim.g.did_load_lualine_plugin = true
 
+vim.cmd('packadd lualine.nvim')
+
 ---Indicators for special modes,
 ---@return string status
 local function extra_mode_status()

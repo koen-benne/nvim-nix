@@ -3,6 +3,8 @@ if vim.g.did_load_illuminate_plugin then
 end
 vim.g.did_load_illuminate_plugin = true
 
+vim.cmd('packadd vim-illuminate')
+
 local ok, illuminate = pcall(require, 'illuminate')
 if not ok then
   return

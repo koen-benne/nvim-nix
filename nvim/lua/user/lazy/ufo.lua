@@ -3,6 +3,8 @@ if vim.g.did_load_ufo_plugin then
 end
 vim.g.did_load_ufo_plugin = true
 
+vim.cmd('packadd ufo.nvim')
+
 local status, ufo = pcall(require, "ufo")
 if not status then
   return

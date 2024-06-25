@@ -3,6 +3,8 @@ if vim.g.did_load_toggleterm_plugin then
 end
 vim.g.did_load_toggleterm_plugin = true
 
+vim.cmd('packadd toggleterm.nvim')
+
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return

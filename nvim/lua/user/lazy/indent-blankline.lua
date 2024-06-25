@@ -3,6 +3,8 @@ if vim.g.did_load_indent_blankline_plugin then
 end
 vim.g.did_load_indent_blankline_plugin = true
 
+vim.cmd('packadd indent-blankline.nvim')
+
 local status_ok, ibl = pcall(require, "ibl")
 if not status_ok then
   vim.notify("Indent-Blankline is not installed!")
