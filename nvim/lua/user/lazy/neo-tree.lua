@@ -225,4 +225,4 @@ neo_tree.setup({
   }
 })
 
-vim.cmd([[nnoremap <C-t> :Neotree reveal<cr>]])
+vim.keymap.set('n', '<C-t>', ":lua require'neo-tree.command'.execute{}<CR>")

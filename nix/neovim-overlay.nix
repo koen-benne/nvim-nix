@@ -53,19 +53,19 @@ with final.pkgs.lib; let
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
 
     # telescope and extensions
-    telescope-nvim
-    telescope-fzy-native-nvim
-    telescope-media-files-nvim
-    telescope-file-browser-nvim
-    telescope-undo-nvim
+    { plugin= telescope-nvim; optional = true; }
+    { plugin= telescope-fzy-native-nvim; optional = true; }
+    { plugin= telescope-media-files-nvim; optional = true; }
+    { plugin= telescope-file-browser-nvim; optional = true; }
+    { plugin= telescope-undo-nvim; optional = true; }
 
     # UI
+    { plugin = neo-tree-nvim; optional = true; } # File tree
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
     nvim-treesitter-context # nvim-treesitter-context
     kanagawa-nvim # Kanagawa theme
     alpha-nvim # Start screen
-    { plugin = neo-tree-nvim; optional = true; } # File tree
     toggleterm-nvim # Terminal toggler
     vim-illuminate # Highlight all instances of a word under the cursor
     tagbar # Sidebar with tags
@@ -127,19 +127,4 @@ in {
   nvim-luarc-json = final.mk-luarc-json {
     plugins = all-plugins;
   };
-
-  # You can add as many derivations as you like.
-  # Use `ignoreConfigRegexes` to filter out config
-  # files you would not like to include.
-  #
-  # For example:
-  #
-  # nvim-pkg-no-telescope = mkNeovim {
-  #   plugins = [];
-  #   ignoreConfigRegexes = [
-  #     "^plugin/telescope.lua"
-  #     "^ftplugin/.*.lua"
-  #   ];
-  #   inherit extraPackages;
-  # };
 }
