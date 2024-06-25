@@ -226,3 +226,10 @@ neo_tree.setup({
 })
 
 vim.keymap.set('n', '<C-t>', ":lua require'neo-tree.command'.execute{}<CR>")
+
+-- Neo tree
+local highlight = require("user.utils.highlights")
+highlight.bg("NeoTreeNormal", "#16161d")
+highlight.bg("NeoTreeFloatBorder", "#16161d")
+highlight.fg_bg("NeoTreeFloatTitle", "#000000", "#957fb8")
+highlight.bg("NeoTreeCursorLine", "#3b323e")

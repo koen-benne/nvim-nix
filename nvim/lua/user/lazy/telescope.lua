@@ -159,3 +159,24 @@ telescope.load_extension "projects"
 telescope.load_extension "harpoon"
 telescope.load_extension "undo"
 
+
+-- Telescope colors
+local highlight = require("user.utils.highlights")
+
+highlight.fg_bg("TelescopeBorder", "#16161d", "#16161d")
+highlight.fg_bg("TelescopePromptBorder", "#1a1b26", "#1a1b26")
+
+highlight.fg_bg("TelescopePromptNormal", "#fff", "#1a1b26")
+highlight.fg_bg("TelescopePromptPrefix", "#957fb8", "#b1a1b26")
+
+highlight.bg("TelescopeNormal", "#16161d")
+highlight.bg("TelescopeMatching", "#b1a1b26")
+highlight.bg("TelescopeSelectionCaret", "#957fb8")
+highlight.bg("TelescopeSelection", "#b1a1b26")
+highlight.bg("TelescopeMultiSelection", "#b1a1b26")
+
+highlight.fg_bg("TelescopePreviewTitle", "#000000", "#7e9cd8")
+highlight.fg_bg("TelescopePromptTitle", "#000000", "#957fb8")
+highlight.fg_bg("TelescopeResultsTitle", "#16161d","#16161d")
+
+highlight.bg("TelescopeSelection", "#3b323e")
