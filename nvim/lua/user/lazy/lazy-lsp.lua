@@ -7,12 +7,15 @@ vim.cmd ( 'packadd lazy-lsp.nvim' )
 vim.cmd ( 'packadd nvim-lspconfig' )
 vim.cmd ( 'packadd lspsaga.nvim' )
 vim.cmd ( 'packadd SchemaStore.nvim' )
+vim.cmd ( 'packadd ts-error-translator.nvim' )
 
 local status_lsp, lazylsp = pcall(require, "lazy-lsp")
 if not status_lsp then
   return
 end
 
+-- This generates better error messages for typescript
+require("ts-error-translator").setup()
 require("user.lsp.handlers").setup()
 
 lazylsp.setup {

@@ -27,6 +27,7 @@ with final.pkgs.lib; let
     { plugin = nvim-lspconfig; optional = true; } # Auto config lsp
     { plugin = lspsaga-nvim; optional = true; }
     { plugin = SchemaStore-nvim; optional = true; }
+    { plugin = (mkNvimPlugin inputs.ts-error-translator-nvim "ts-error-translator.nvim"); optional = true; } # Error translator
     { plugin = (mkNvimPlugin inputs.supermaven-nvim "supermaven-nvim"); optional = true; } # Supermaven
     # { plugin = copilot-lua; optional = true; }
 
