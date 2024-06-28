@@ -27,7 +27,8 @@ with final.pkgs.lib; let
     { plugin = nvim-lspconfig; optional = true; } # Auto config lsp
     { plugin = lspsaga-nvim; optional = true; }
     { plugin = SchemaStore-nvim; optional = true; }
-    { plugin = copilot-lua; optional = true; }
+    { plugin = (mkNvimPlugin inputs.supermaven-nvim "supermaven-nvim"); optional = true; } # Supermaven
+    # { plugin = copilot-lua; optional = true; }
 
     # Completion
     { plugin = nvim-cmp; optional = true; }
@@ -53,11 +54,11 @@ with final.pkgs.lib; let
     gitsigns-nvim
 
     # telescope and extensions
-    { plugin= telescope-nvim; optional = true; }
-    { plugin= telescope-fzy-native-nvim; optional = true; }
-    { plugin= telescope-media-files-nvim; optional = true; }
-    { plugin= telescope-file-browser-nvim; optional = true; }
-    { plugin= telescope-undo-nvim; optional = true; }
+    { plugin = telescope-nvim; optional = true; }
+    { plugin = telescope-fzy-native-nvim; optional = true; }
+    { plugin = telescope-media-files-nvim; optional = true; }
+    { plugin = telescope-file-browser-nvim; optional = true; }
+    { plugin = telescope-undo-nvim; optional = true; }
 
     # UI
     alpha-nvim # Start screen

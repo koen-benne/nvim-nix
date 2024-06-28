@@ -16,6 +16,10 @@
       url = "github:ahmedkhalf/project.nvim";
       flake = false;
     };
+    supermaven-nvim = {
+      url = "github:supermaven-inc/supermaven-nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
