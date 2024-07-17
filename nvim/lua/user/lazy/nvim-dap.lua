@@ -18,8 +18,8 @@ require('telescope').load_extension('dap')
 
 dap.adapters.php = {
     type = 'executable',
-    command = "bash",
-    args = {os.getenv("HOME") .. "/.local/share/nvim/mason/bin/php-debug-adapter"},
+    command = "node",
+    args = { io.popen("nix path-info nixpkgs#vscode-extensions.xdebug.php-debug"):read("*a") .. "/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js" },
 }
 dap.adapters.chrome = {
     type = 'executable',
