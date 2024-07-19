@@ -17,19 +17,44 @@ end
 require('telescope').load_extension('dap')
 
 local function get_php_debug_path()
-    local handle = io.popen("nix path-info nixpkgs#vscode-extensions.xdebug.php-debug")
-    if not handle then
-        error("Failed to run command: nix path-info nixpkgs#vscode-extensions.xdebug.php-debug")
+    local command = "nix path-info nixpkgs#vscode-extensions.xdebug.php-debug"
+    local output = {}
+
+    local function handle_output(job_id, data, event)
+        if event == "stdout" then
+            for _, line in ipairs(data) do
+                if line ~= "" then
+                    table.insert(output, line)
+                end
+            end
+        elseif event == "stderr" then
+            for _, line in ipairs(data) do
+                if line ~= "" then
+                    vim.notify("Error: " .. line)
+                end
+            end
+        elseif event == "exit" then
+            if #output == 0 then
+                vim.notify("Command returned empty result: " .. command)
+            else
+                local result = table.concat(output, "\n")
+                result = vim.fn.trim(result) .. "/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js"
+                return result
+            end
+        end
     end
 
-    local result = handle:read("*a")
-    handle:close()
+    local job_id = vim.fn.jobstart(command, {
+        on_stdout = handle_output,
+        on_stderr = handle_output,
+        on_exit = handle_output,
+        stdout_buffered = true,
+        stderr_buffered = true,
+    })
 
-    if not result or result == '' then
-        error("Command returned empty result: nix path-info nixpkgs#vscode-extensions.xdebug.php-debug")
+    if not job_id then
+        vim.notify("Failed to start job: " .. command)
     end
-
-    return vim.fn.trim(result) .. "/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js"
 end
 
 dap.adapters.php = {
