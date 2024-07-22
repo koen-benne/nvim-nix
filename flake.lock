@@ -85,11 +85,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1719254875,
-        "narHash": "sha256-ECni+IkwXjusHsm9Sexdtq8weAq/yUyt1TWIemXt3Ko=",
+        "lastModified": 1721379653,
+        "narHash": "sha256-8MUgifkJ7lkZs3u99UDZMB4kbOxvMEXQZ31FO3SopZ0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2893f56de08021cffd9b6b6dfc70fd9ccd51eb60",
+        "rev": "1d9c2c9b3e71b9ee663d11c5d298727dace8d374",
         "type": "github"
       },
       "original": {
@@ -128,11 +128,11 @@
     "supermaven-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1718585015,
-        "narHash": "sha256-of3dqknyQl1H+bpCsRgpJ4yx3t4/gt1f3ACKYNLUEwo=",
+        "lastModified": 1721232463,
+        "narHash": "sha256-v5OIPQJhNdZA3Prw6DGq8fRxsmKvouGbt0IKhAZdlQM=",
         "owner": "supermaven-inc",
         "repo": "supermaven-nvim",
-        "rev": "ec7ae4c8190c96002aa466b1eb4a23aa51e24812",
+        "rev": "d71257f431e190d9236d7f30da4c2d659389e91f",
         "type": "github"
       },
       "original": {
