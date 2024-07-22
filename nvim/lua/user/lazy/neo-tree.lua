@@ -225,8 +225,6 @@ neo_tree.setup({
   }
 })
 
-vim.keymap.set('n', '<C-t>', ":Neotree reveal<CR>")
-
 -- Neo tree
 local highlight = require("user.utils.highlights")
 highlight.bg("NeoTreeNormal", "#16161d")

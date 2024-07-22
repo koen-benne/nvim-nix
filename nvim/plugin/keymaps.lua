@@ -91,8 +91,8 @@ setKeymap("n", "<leader>mk", ":lua require'harpoon.mark'.add_file()<CR>")
 --[[ setKeymap("n", "<leader>hr", ":lua require'harpoon.ui'.toggle_quick_menu()<CR>") ]]
 setKeymap("n", "<leader>hr", ":Telescope harpoon marks<CR>")
 
--- NVIM Tree --
---[[ setKeymap("n", "<C-t>", ":NvimTreeToggle<CR>") ]]
+-- Neotree --
+setKeymap("n", "<C-t>", ":Neotree reveal<CR>")
 
 -- UFO --
 setKeymap("n", "zP", function()

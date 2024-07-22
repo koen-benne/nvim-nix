@@ -33,9 +33,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
 -- Lazy load some plugins
 vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
-    vim.defer_fn(function()
-      require('user.lazy')
-    end, 0)
+    require('user.lazy')
   end
 })
 
