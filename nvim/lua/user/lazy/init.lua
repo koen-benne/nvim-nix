@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
         require('user.lazy.whitespace')
         require('user.lazy.indent-blankline')
         require('user.lazy.supermaven')
-      end, 0)
+      end, 100)
     end
   end
 })
