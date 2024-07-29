@@ -59,7 +59,7 @@
         name = "nvim-devShell";
         buildInputs = with pkgs; [
           # Tools for Lua and Nix development, useful for editing files in this repo
-          nixpkgs-fmt
+          alejandra # Formatter for nix
           lua-language-server
           nil
           stylua
