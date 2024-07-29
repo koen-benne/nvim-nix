@@ -157,7 +157,10 @@ with final.pkgs.lib; let
       optional = false;
     }
 
-    (mkNvimPlugin inputs.project-nvim "project.nvim") # Project management
+    {
+      plugin = mkNvimPlugin inputs.project-nvim "project.nvim"; # Project management
+      optional = false;
+    }
   ];
 
   extraPackages = with pkgs; [
