@@ -3,21 +3,21 @@ if vim.g.did_load_dressing_plugin then
 end
 vim.g.did_load_dressing_plugin = true
 
-local status_ok, dressing = pcall(require, "dressing")
+local status_ok, dressing = pcall(require, 'dressing')
 if not status_ok then
   return
 end
 
-dressing.setup({
+dressing.setup {
   input = {
     -- Set to false to disable the vim.ui.input implementation
     enabled = true,
 
     -- Default prompt string
-    default_prompt = "Input:",
+    default_prompt = 'Input:',
 
     -- Can be 'left', 'right', or 'center'
-    title_pos = "left",
+    title_pos = 'left',
 
     -- When true, <Esc> will close the modal
     insert_only = true,
@@ -26,9 +26,9 @@ dressing.setup({
     start_in_insert = true,
 
     -- These are passed to nvim_open_win
-    border = "rounded",
+    border = 'rounded',
     -- 'editor' and 'win' will default to being centered
-    relative = "cursor",
+    relative = 'cursor',
 
     -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     prefer_width = 40,
@@ -46,7 +46,7 @@ dressing.setup({
       wrap = false,
       -- Indicator for when text exceeds window
       list = true,
-      listchars = "precedes:…,extends:…",
+      listchars = 'precedes:…,extends:…',
       -- Increase this for more context when text scrolls off the window
       sidescrolloff = 0,
     },
@@ -54,14 +54,14 @@ dressing.setup({
     -- Set to `false` to disable
     mappings = {
       n = {
-        ["<Esc>"] = "Close",
-        ["<CR>"] = "Confirm",
+        ['<Esc>'] = 'Close',
+        ['<CR>'] = 'Confirm',
       },
       i = {
-        ["<C-c>"] = "Close",
-        ["<CR>"] = "Confirm",
-        ["<Up>"] = "HistoryPrev",
-        ["<Down>"] = "HistoryNext",
+        ['<C-c>'] = 'Close',
+        ['<CR>'] = 'Confirm',
+        ['<Up>'] = 'HistoryPrev',
+        ['<Down>'] = 'HistoryNext',
       },
     },
 
@@ -79,7 +79,7 @@ dressing.setup({
     enabled = true,
 
     -- Priority list of preferred vim.select implementations
-    backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
+    backend = { 'telescope', 'fzf_lua', 'fzf', 'builtin', 'nui' },
 
     -- Trim trailing `:` from prompt
     trim_prompt = true,
@@ -107,15 +107,15 @@ dressing.setup({
 
     -- Options for nui Menu
     nui = {
-      position = "50%",
+      position = '50%',
       size = nil,
-      relative = "editor",
+      relative = 'editor',
       border = {
-        style = "rounded",
+        style = 'rounded',
       },
       buf_options = {
         swapfile = false,
-        filetype = "DressingSelect",
+        filetype = 'DressingSelect',
       },
       win_options = {
         winblend = 10,
@@ -131,16 +131,16 @@ dressing.setup({
       -- Display numbers for options and set up keymaps
       show_numbers = true,
       -- These are passed to nvim_open_win
-      border = "rounded",
+      border = 'rounded',
       -- 'editor' and 'win' will default to being centered
-      relative = "editor",
+      relative = 'editor',
 
       buf_options = {},
       win_options = {
         -- Window transparency (0-100)
         winblend = 10,
         cursorline = true,
-        cursorlineopt = "both",
+        cursorlineopt = 'both',
       },
 
       -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
@@ -155,9 +155,9 @@ dressing.setup({
 
       -- Set to `false` to disable
       mappings = {
-        ["<Esc>"] = "Close",
-        ["<C-c>"] = "Close",
-        ["<CR>"] = "Confirm",
+        ['<Esc>'] = 'Close',
+        ['<C-c>'] = 'Close',
+        ['<CR>'] = 'Confirm',
       },
 
       override = function(conf)
@@ -173,4 +173,4 @@ dressing.setup({
     -- see :help dressing_get_config
     get_config = nil,
   },
-})
+}

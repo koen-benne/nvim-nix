@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
         require('user.lazy.supermaven')
       end, 100)
     end
-  end
+  end,
 })
 
 -- Other lazy plugins

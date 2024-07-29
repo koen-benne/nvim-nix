@@ -5,17 +5,17 @@ vim.g.did_load_nvim_colorizer_plugin = true
 
 vim.cmd('packadd nvim-colorizer.lua')
 
-local status_ok, colorizer = pcall(require, "colorizer")
+local status_ok, colorizer = pcall(require, 'colorizer')
 if not status_ok then
   return
 end
 
 colorizer.setup {
   filetypes = {
-    "*",
-    conf = { RRGGBB = true, },
-    css = { rgb_fn = true, },
-    html = { names = false, },
-    rasi = { RRGGBBAA = true, }
+    '*',
+    conf = { RRGGBB = true },
+    css = { rgb_fn = true },
+    html = { names = false },
+    rasi = { RRGGBBAA = true },
   },
 }

@@ -5,9 +5,9 @@ vim.g.did_load_harpoon_plugin = true
 
 vim.cmd('packadd harpoon')
 
-local status_ok, harpoon = pcall(require, "harpoon")
+local status_ok, harpoon = pcall(require, 'harpoon')
 if not status_ok then
-	return
+  return
 end
 
 harpoon.setup {
@@ -24,7 +24,7 @@ harpoon.setup {
   tmux_autoclose_windows = false,
 
   -- filetypes that you want to prevent from adding to the harpoon list menu.
-  excluded_filetypes = { "harpoon", "toggleterm", "TelescopePrompt", "NvimTree" },
+  excluded_filetypes = { 'harpoon', 'toggleterm', 'TelescopePrompt', 'NvimTree' },
 
   -- set marks specific to each git branch inside git repository
   mark_branch = false,

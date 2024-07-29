@@ -24,16 +24,15 @@ api.nvim_create_autocmd('TermOpen', {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufReadPre", {
+vim.api.nvim_create_autocmd('BufReadPre', {
   callback = function()
     require('persistence').setup()
-  end
+  end,
 })
 
 -- Lazy load some plugins
-vim.api.nvim_create_autocmd("UIEnter", {
+vim.api.nvim_create_autocmd('UIEnter', {
   callback = function()
     require('user.lazy')
-  end
+  end,
 })
-

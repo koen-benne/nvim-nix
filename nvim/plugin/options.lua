@@ -4,48 +4,48 @@ end
 vim.g.did_load_options = true
 
 local options = {
-    backup = false,
-    clipboard = "unnamedplus",
-    completeopt = { "menu", "menuone", "noselect" },	-- cmp stuff
-    mouse = "a",				                              -- allow mouse use
-    smartcase = true,
-    smartindent = true,
-    number = true,
-    pumheight = 10,                                   -- pop up menu height
-    incsearch = true,
-    visualbell = true,
-    showtabline = 1,                                  -- only show tabline when there are more than one tab
-    numberwidth = 2,                                  -- set number column width to 2 {default 4}
-    signcolumn = "yes",                               -- always show the sign column to prevent shifting text
-    expandtab = true,
-    shiftwidth = 2,
-    tabstop = 2,
-    wrap = true,
-    autoindent = true,
-    ruler = true,
-    hlsearch = true,
-    relativenumber = false,
-    scrolloff = 8,
-    sidescrolloff = 8,
-    swapfile = false,
-    splitbelow = true,
-    splitright = true,
-    termguicolors = true,
-    laststatus = 2,                                   -- Single statusline when set to 3
-    guifont = "JetBrainsMonoNL Nerd Font:h11",        -- font used in GUI neovim
-    cursorline = true,
-    pumblend = 10,
-    winblend = 10,
-    conceallevel = 2,
-    fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
-    path = vim.o.path .. '**',
-    colorcolumn = '100'
+  backup = false,
+  clipboard = 'unnamedplus',
+  completeopt = { 'menu', 'menuone', 'noselect' }, -- cmp stuff
+  mouse = 'a', -- allow mouse use
+  smartcase = true,
+  smartindent = true,
+  number = true,
+  pumheight = 10, -- pop up menu height
+  incsearch = true,
+  visualbell = true,
+  showtabline = 1, -- only show tabline when there are more than one tab
+  numberwidth = 2, -- set number column width to 2 {default 4}
+  signcolumn = 'yes', -- always show the sign column to prevent shifting text
+  expandtab = true,
+  shiftwidth = 2,
+  tabstop = 2,
+  wrap = true,
+  autoindent = true,
+  ruler = true,
+  hlsearch = true,
+  relativenumber = false,
+  scrolloff = 8,
+  sidescrolloff = 8,
+  swapfile = false,
+  splitbelow = true,
+  splitright = true,
+  termguicolors = true,
+  laststatus = 2, -- Single statusline when set to 3
+  guifont = 'JetBrainsMonoNL Nerd Font:h11', -- font used in GUI neovim
+  cursorline = true,
+  pumblend = 10,
+  winblend = 10,
+  conceallevel = 2,
+  fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
+  path = vim.o.path .. '**',
+  colorcolumn = '100',
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append('c')
 
 for k, v in pairs(options) do
-    vim.opt[k] = v
+  vim.opt[k] = v
 end
 
 -- Folding stuff
@@ -78,14 +78,13 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.6
   vim.g.neovide_floating_opacity = 0.6
   function ChangeScaleFactor(delta)
-      vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
   end
 end
 
-vim.cmd [[
+vim.cmd([[
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave  * if &nu                   | set nornu | endif
-]]
-
+]])

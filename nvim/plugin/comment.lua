@@ -3,7 +3,7 @@ if vim.g.did_load_comment_plugin then
 end
 vim.g.did_load_comment_plugin = true
 
-local status_ok, comment = pcall(require, "Comment")
+local status_ok, comment = pcall(require, 'Comment')
 if not status_ok then
   return
 end

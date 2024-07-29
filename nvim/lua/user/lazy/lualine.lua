@@ -30,7 +30,7 @@ require('lualine').setup {
   },
   options = {
     theme = 'kanagawa',
-    path = 1
+    path = 1,
   },
   extensions = { 'fugitive', 'fzf', 'toggleterm', 'quickfix' },
 }
