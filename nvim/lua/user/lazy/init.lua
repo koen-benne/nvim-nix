@@ -6,8 +6,15 @@ end, { nargs = '*' })
 
 -- For plugins that are only necessary once we are in a buffer
 local buffer_plugins_loaded = false
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  callback = function()
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function(args)
+    local filetype = vim.bo[args.buf].filetype
+
+    if filetype == 'alpha' or filetype == 'neo-tree' or filetype == 'TelescopePrompt' then
+      return
+    end
+
     if not buffer_plugins_loaded then
       buffer_plugins_loaded = true
 
