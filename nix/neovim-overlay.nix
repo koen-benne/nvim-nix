@@ -19,8 +19,7 @@ with final.pkgs.lib; let
 
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
-    # packadd needs to be called for each of the optional plugins
-    nvim-treesitter.withAllGrammars
+    # packadd needs to be called for each of the optional plugins (the default)
 
     # LSP
     lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
@@ -93,6 +92,10 @@ with final.pkgs.lib; let
     indent-blankline-nvim
     whitespace-nvim
     nvim-ufo # Folding
+    {
+      plugin = nvim-treesitter.withAllGrammars;
+      optional = false;
+    }
     {
       plugin = nvim-treesitter-textobjects;
       optional = false;
