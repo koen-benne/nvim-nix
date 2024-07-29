@@ -15,7 +15,7 @@ with final.pkgs.lib; let
   pkgs-wrapNeovim = inputs.nixpkgs.legacyPackages.${pkgs.system};
 
   # This is the helper function that builds the Neovim derivation.
-  mkNeovim = pkgs.callPackage ./mkNeovim.nix { inherit pkgs-wrapNeovim; };
+  mkNeovim = pkgs.callPackage ./mkNeovim.nix {inherit pkgs-wrapNeovim;};
 
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
@@ -23,84 +23,136 @@ with final.pkgs.lib; let
     nvim-treesitter.withAllGrammars
 
     # LSP
-    { plugin = lazy-lsp-nvim; optional = true; } # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
-    { plugin = nvim-lspconfig; optional = true; } # Auto config lsp
-    { plugin = lspsaga-nvim; optional = true; }
-    { plugin = SchemaStore-nvim; optional = true; }
-    { plugin = (mkNvimPlugin inputs.ts-error-translator-nvim "ts-error-translator.nvim"); optional = true; } # Error translator
-    { plugin = (mkNvimPlugin inputs.supermaven-nvim "supermaven-nvim"); optional = true; } # Supermaven
-    # { plugin = copilot-lua; optional = true; }
+    lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
+    nvim-lspconfig # Auto config lsp
+    lspsaga-nvim
+    SchemaStore-nvim
+
+    (mkNvimPlugin inputs.ts-error-translator-nvim "ts-error-translator.nvim") # Error translator
+    (mkNvimPlugin inputs.supermaven-nvim "supermaven-nvim") # Supermaven
+    # { plugin = copilot-lua;  }
 
     # Completion
-    { plugin = nvim-cmp; optional = true; }
-    { plugin = cmp_luasnip; optional = true; } # Snippets autocompletion extension for nvim-cmp
-    { plugin = luasnip; optional = true; } # Snippets
-    { plugin = cmp-nvim-lsp; optional = true; } # LSP as completion source
-    { plugin = cmp-nvim-lsp-signature-help; optional = true; }
-    { plugin = cmp-buffer; optional = true; } # Current buffer as completion source
-    { plugin = cmp-path; optional = true; } # File paths as completion source
-    { plugin = cmp-nvim-lua; optional = true; } # Neovim lua API as completion source
-    { plugin = cmp-cmdline; optional = true; } # cmp command line suggestions
-    { plugin = cmp-cmdline-history; optional = true; } # cmp command line history suggestions
-    { plugin = crates-nvim; optional = true; }
+    nvim-cmp
+    cmp_luasnip # Snippets autocompletion extension for nvim-cmp
+    luasnip # Snippets
+    cmp-nvim-lsp  # LSP as completion source
+    cmp-nvim-lsp-signature-help
+    cmp-buffer  # Current buffer as completion source
+    cmp-path  # File paths as completion source
+    cmp-nvim-lua  # Neovim lua API as completion source
+    cmp-cmdline  # cmp command line suggestions
+    cmp-cmdline-history  # cmp command line history suggestions
+    crates-nvim
 
     # Debugging
-    { plugin = nvim-dap; optional = true; }
-    { plugin = nvim-dap-go; optional = true; }
-    { plugin = nvim-dap-ui; optional = true; }
-    { plugin = nvim-dap-virtual-text; optional = true; }
-    { plugin = telescope-dap-nvim; optional = true; }
+    nvim-dap
+    nvim-dap-go
+    nvim-dap-ui
+    nvim-dap-virtual-text
+    telescope-dap-nvim
 
     # Git integration
-    gitsigns-nvim
+    {
+      plugin = gitsigns-nvim;
+      optional = false;
+    }
 
     # telescope and extensions
-    { plugin = telescope-nvim; optional = true; }
-    { plugin = telescope-fzy-native-nvim; optional = true; }
-    { plugin = telescope-media-files-nvim; optional = true; }
-    { plugin = telescope-file-browser-nvim; optional = true; }
-    { plugin = telescope-undo-nvim; optional = true; }
+    telescope-nvim
+    telescope-fzy-native-nvim
+    telescope-media-files-nvim
+    telescope-file-browser-nvim
+    telescope-undo-nvim
 
     # UI
-    alpha-nvim # Start screen
-    kanagawa-nvim # Kanagawa theme
-    { plugin = neo-tree-nvim; optional = true; } # File tree
-    { plugin = lualine-nvim; optional = true; } # Status line
-    { plugin = toggleterm-nvim; optional = true; } # Terminal toggler
-    { plugin = nvim-colorizer-lua; optional = true; }
-    { plugin = statuscol-nvim; optional = true; } # Status column
-    nvim-treesitter-context # nvim-treesitter-context
-    { plugin = vim-illuminate; optional = true; } # Highlight all instances of a word under the cursor
-    { plugin = rainbow-delimiters-nvim; optional = true; } # Rainbow delimiters
+    neo-tree-nvim # File tree
+    lualine-nvim # Status line
+    toggleterm-nvim # Terminal toggler
+    nvim-colorizer-lua
+    statuscol-nvim # Status column
+    vim-illuminate # Highlight all instances of a word under the cursor
+    rainbow-delimiters-nvim # Rainbow delimiters
+    {
+      plugin = alpha-nvim; # Start screen
+      optional = false;
+    }
+    {
+      plugin = kanagawa-nvim; # Kanagawa theme
+      optional = false;
+    }
+    {
+      plugin = nvim-treesitter-context; # nvim-treesitter-context
+      optional = false;
+    }
 
     # navigation/editing enhancement plugins
-    { plugin = vim-unimpaired; optional = true; } # predefined ] and [ navigation keymaps
-    { plugin = nvim-surround; optional = true; }
-    nvim-treesitter-textobjects
-    nvim-ts-context-commentstring
-    nvim-autopairs # Automatically insert pairs
-    nvim-ts-autotag # Automatically close typescript tags
-    { plugin = harpoon; optional = true; }
-    { plugin = indent-blankline-nvim; optional = true; }
-    { plugin = whitespace-nvim; optional = true; }
-    comment-nvim
-    { plugin = nvim-ufo; optional = true; } # Folding
+    vim-unimpaired # predefined ] and [ navigation keymaps
+    nvim-surround
+    harpoon
+    indent-blankline-nvim
+    whitespace-nvim
+    nvim-ufo # Folding
+    {
+      plugin = nvim-treesitter-textobjects;
+      optional = false;
+    }
+    {
+      plugin = nvim-ts-context-commentstring;
+      optional = false;
+    }
+    {
+      plugin = nvim-autopairs; # Automatically insert pairs
+      optional = false;
+    }
+    {
+      plugin = nvim-ts-autotag; # Automatically close typescript tags
+      optional = false;
+    }
+    {
+      plugin = comment-nvim;
+      optional = false;
+    }
 
     # Useful utilities
-    { plugin = nvim-unception; optional = true; } # Prevent nested neovim sessions | nvim-unception
-    persistence-nvim # For opening last session
-    { plugin = which-key-nvim; optional = true; }
-    { plugin = vim-wakatime; optional = true; }
-    { plugin = editorconfig-nvim; optional = true; }
-    vim-startuptime
+    nvim-unception # Prevent nested neovim sessions | nvim-unception
+    which-key-nvim
+    vim-wakatime
+    editorconfig-nvim
+    {
+      plugin = persistence-nvim; # For opening last session
+      optional = false;
+    }
+    {
+      plugin = vim-startuptime;
+      optional = false;
+    }
 
     # libraries that other plugins depend on
-    sqlite-lua
-    plenary-nvim
-    nvim-web-devicons
-    promise-async
-    dressing-nvim
-    nui-nvim
+    {
+      plugin = sqlite-lua;
+      optional = false;
+    }
+    {
+      plugin = plenary-nvim;
+      optional = false;
+    }
+    {
+      plugin = nvim-web-devicons;
+      optional = false;
+    }
+    {
+      plugin = promise-async;
+      optional = false;
+    }
+    {
+      plugin = dressing-nvim;
+      optional = false;
+    }
+    {
+      plugin = nui-nvim;
+      optional = false;
+    }
 
     (mkNvimPlugin inputs.project-nvim "project.nvim") # Project management
   ];
