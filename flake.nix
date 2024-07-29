@@ -40,16 +40,6 @@
       "aarch64-darwin"
     ];
 
-    forEachDir = exec: ''
-      for dir in */; do
-        (
-          cd "''${dir}"
-
-          ${exec}
-        )
-      done
-    '';
-
     # This is where the Neovim derivation is built.
     neovim-overlay = import ./nix/neovim-overlay.nix {inherit inputs;};
   in
@@ -74,13 +64,6 @@
           nil
           stylua
           luajitPackages.luacheck
-          (writeShellApplication {
-            name = "check";
-            text = forEachDir ''
-              echo "checking ''${dir}"
-              nix flake check --all-systems --no-build
-            '';
-          })
         ];
         shellHook = ''
           # symlink the .luarc.json generated in the overlay
