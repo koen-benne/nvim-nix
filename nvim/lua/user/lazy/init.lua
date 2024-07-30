@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('FileType', {
         require('user.lazy.whitespace')
         require('user.lazy.indent-blankline')
         require('user.lazy.supermaven')
-      end, 100)
+      end, 300)
     end
   end,
 })
