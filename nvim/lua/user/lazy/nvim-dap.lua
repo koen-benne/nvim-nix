@@ -16,7 +16,7 @@ end
 
 require('telescope').load_extension('dap')
 
-local function get_php_debug_path()
+local function get_php_debug_path(callback)
   local command = 'nix build nixpkgs#vscode-extensions.xdebug.php-debug --print-out-paths'
   local output = {}
 
@@ -39,7 +39,7 @@ local function get_php_debug_path()
       else
         local result = table.concat(output, '\n')
         result = vim.fn.trim(result) .. '/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js'
-        return result
+        callback(result)
       end
     end
   end
@@ -57,27 +57,31 @@ local function get_php_debug_path()
   end
 end
 
-dap.adapters.php = {
-  type = 'executable',
-  command = 'node',
-  args = { get_php_debug_path() },
-}
+get_php_debug_path(function(php_debug_path)
+  dap.adapters.php = {
+    type = 'executable',
+    command = 'node',
+    args = { php_debug_path },
+  }
+
+  dap.configurations.php = {
+    {
+      type = 'php',
+      request = 'launch',
+      name = 'Listen for Xdebug',
+      port = '9003',
+      log = true,
+      pathMappings = {
+        ['/var/www/html'] = '${workspaceFolder}',
+      },
+    },
+  }
+end)
+
 dap.adapters.chrome = {
   type = 'executable',
   command = 'node',
   args = { os.getenv('HOME') .. '/.local/share/nvim/mason/bin/chrome-debug-adapter' },
-}
-
-dap.configurations.php = {
-  {
-    type = 'php',
-    request = 'launch',
-    name = 'Listen for Xdebug',
-    port = '9003',
-    pathMappings = {
-      ['/var/www/html'] = '${workspaceFolder}',
-    },
-  },
 }
 dap.configurations.typescriptreact = {
   {
