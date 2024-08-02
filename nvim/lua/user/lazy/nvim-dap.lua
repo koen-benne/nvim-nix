@@ -17,7 +17,7 @@ end
 require('telescope').load_extension('dap')
 
 local function get_php_debug_path()
-  local command = 'nix path-info nixpkgs#vscode-extensions.xdebug.php-debug'
+  local command = 'nix build nixpkgs#vscode-extensions.xdebug.php-debug --print-out-paths'
   local output = {}
 
   local function handle_output(job_id, data, event)
