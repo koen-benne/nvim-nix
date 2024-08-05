@@ -28,13 +28,14 @@ lazylsp.setup {
   preferred_servers = {
     markdown = {},
     python = { 'pyright', 'ruff_lsp' },
-    lua = { 'lua_ls' },
+    lua = { 'lua_ls', 'stylua' },
     nix = { 'nil' },
     rust = { 'rust_analyzer' },
     json = { 'jsonls' },
     css = { 'cssmodules' },
     typescript = { 'tsserver' },
     typescriptreact = { 'tsserver' },
+    php = { 'intelephense' },
   },
   prefer_local = true, -- Prefer locally installed servers over nix-shell
   -- Default config passed to all servers to specify on_attach callback and other options.
@@ -54,6 +55,7 @@ lazylsp.setup {
     jsonls = require('user.lsp.settings.jsonls'),
     pyright = require('user.lsp.settings.pyright'),
     emmet_ls = require('user.lsp.settings.emmet_ls'),
+    intelephense = require('user.lsp.settings.intelephense'),
     -- cssmodules_ls = require "user.lsp.settings.cssmodules_ls",
   },
 }
