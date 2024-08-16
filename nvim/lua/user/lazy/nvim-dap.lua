@@ -17,7 +17,8 @@ end
 require('telescope').load_extension('dap')
 
 local function get_php_debug_path(callback)
-  local command = 'nix build nixpkgs#vscode-extensions.xdebug.php-debug --print-out-paths'
+  -- The nix build command causes a result folder to be created, which we do not want.
+  local command = 'nix build nixpkgs#vscode-extensions.xdebug.php-debug --print-out-paths --no-link'
   local output = {}
 
   local function handle_output(job_id, data, event)
