@@ -55,6 +55,14 @@
         name = "nvim-devShell";
         buildInputs = with pkgs; [
           # Tools for Lua and Nix development, useful for editing files in this repo
+          (writeShellApplication {
+            name = "format";
+            runtimeInputs = with pkgs; [alejandra];
+            text = ''
+              alejandra "**/*.nix"
+              stylua ./**/*.lua
+            '';
+          })
           alejandra # Formatter for nix
           lua-language-server
           nil
