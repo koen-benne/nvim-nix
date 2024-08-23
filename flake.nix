@@ -65,7 +65,6 @@
           })
           alejandra # Formatter for nix
           lua-language-server
-          nil
           stylua
           luajitPackages.luacheck
         ];
