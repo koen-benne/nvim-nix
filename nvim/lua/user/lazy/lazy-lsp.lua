@@ -28,8 +28,8 @@ lazylsp.setup {
   preferred_servers = {
     markdown = {},
     python = { 'pyright', 'ruff_lsp' },
-    lua = { 'lua_ls', 'stylua' },
-    nix = { 'nil' },
+    lua = { 'lua_ls' },
+    nix = { 'nil_ls', 'nixd' },
     rust = { 'rust_analyzer' },
     json = { 'jsonls' },
     css = { 'cssmodules' },
