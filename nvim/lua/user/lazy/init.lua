@@ -19,14 +19,12 @@ vim.api.nvim_create_autocmd('FileType', {
       buffer_plugins_loaded = true
 
       vim.defer_fn(function()
-        -- CMP before lsp, because lsp config depends on cmp stuff
-        require('user.lazy.cmp')
-        require('user.lazy.lazy-lsp')
         require('user.lazy.nvim-colorizer')
         require('user.lazy.illuminate')
         require('user.lazy.ufo')
         require('user.lazy.whitespace')
         require('user.lazy.indent-blankline')
+        require('user.lazy.supermaven')
       end, 300)
     end
   end,
@@ -46,7 +44,9 @@ vim.defer_fn(function()
   require('user.lazy.nvim-dap')
 end, 100)
 
--- Supermaven loves to block just absolutely everything
+-- This really wants to load right away or something
 vim.defer_fn(function()
-  require('user.lazy.supermaven')
+  -- CMP before lsp, because lsp config depends on cmp stuff
+  require('user.lazy.cmp')
+  require('user.lazy.lazy-lsp')
 end, 300)
