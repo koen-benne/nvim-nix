@@ -27,7 +27,6 @@ vim.api.nvim_create_autocmd('FileType', {
         require('user.lazy.ufo')
         require('user.lazy.whitespace')
         require('user.lazy.indent-blankline')
-        require('user.lazy.supermaven')
       end, 300)
     end
   end,
@@ -46,3 +45,8 @@ vim.defer_fn(function()
   -- This one is slow and not usually important
   require('user.lazy.nvim-dap')
 end, 100)
+
+-- Supermaven loves to block just absolutely everything
+vim.defer_fn(function()
+  require('user.lazy.supermaven')
+end, 300)
