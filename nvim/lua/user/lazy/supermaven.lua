@@ -12,6 +12,6 @@ end
 
 supermaven.setup {
   keymaps = {
-    accept_suggestion = '<A-l>',
+    accept_suggestion = '<C-C>',
   },
 }
