@@ -6,29 +6,44 @@ end, { nargs = '*' })
 
 -- For plugins that are only necessary once we are in a buffer
 local buffer_plugins_loaded = false
+
+-- For plugins that are only necessary once we are in a buffer
+local function load_buffer_plugins(args)
+  local filetype = vim.bo[args.buf].filetype
+  if filetype == 'alpha' or filetype == 'neo-tree' or filetype == 'TelescopePrompt' then
+    return
+  end
+
+  if not buffer_plugins_loaded then
+    buffer_plugins_loaded = true
+
+    vim.defer_fn(function()
+      require('user.lazy.cmp')
+      require('user.lazy.lazy-lsp')
+      require('user.lazy.nvim-colorizer')
+      require('user.lazy.illuminate')
+      require('user.lazy.ufo')
+      require('user.lazy.whitespace')
+      require('user.lazy.indent-blankline')
+      require('user.lazy.supermaven')
+
+      -- Reload the buffer after the plugins are loaded. Especially important for lsp
+      vim.api.nvim_exec([[ doautocmd BufReadPost ]], false)
+    end, 100)
+  end
+end
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
-  callback = function(args)
-    local filetype = vim.bo[args.buf].filetype
-
-    if filetype == 'alpha' or filetype == 'neo-tree' or filetype == 'TelescopePrompt' then
-      return
-    end
-
-    if not buffer_plugins_loaded then
-      buffer_plugins_loaded = true
-
-      vim.defer_fn(function()
-        require('user.lazy.nvim-colorizer')
-        require('user.lazy.illuminate')
-        require('user.lazy.ufo')
-        require('user.lazy.whitespace')
-        require('user.lazy.indent-blankline')
-        require('user.lazy.supermaven')
-      end, 300)
-    end
-  end,
+  callback = load_buffer_plugins,
 })
+
+-- Trigger the FileType autocommand explicitly for the first buffer
+local initial_buf = vim.api.nvim_get_current_buf()
+local initial_ft = vim.bo[initial_buf].filetype
+if initial_ft ~= '' then
+  load_buffer_plugins({ buf = initial_buf })
+end
 
 -- Other lazy plugins
 vim.defer_fn(function()
@@ -42,11 +57,5 @@ vim.defer_fn(function()
   require('user.lazy.statuscol')
   -- This one is slow and not usually important
   require('user.lazy.nvim-dap')
-end, 100)
+end, 50)
 
--- Works best if loaded at startup. As long as it loads before supermaven.
-vim.defer_fn(function()
-  -- CMP before lsp, because lsp config depends on cmp stuff
-  require('user.lazy.cmp')
-  require('user.lazy.lazy-lsp')
-end, 200)
