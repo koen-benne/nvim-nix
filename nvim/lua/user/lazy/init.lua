@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('FileType', {
 local initial_buf = vim.api.nvim_get_current_buf()
 local initial_ft = vim.bo[initial_buf].filetype
 if initial_ft ~= '' then
-  load_buffer_plugins({ buf = initial_buf })
+  load_buffer_plugins { buf = initial_buf }
 end
 
 -- Other lazy plugins
@@ -58,4 +58,3 @@ vim.defer_fn(function()
   -- This one is slow and not usually important
   require('user.lazy.nvim-dap')
 end, 50)
-
