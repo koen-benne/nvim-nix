@@ -17,8 +17,9 @@ whitespace.setup {
 
   -- `ignored_filetypes` configures which filetypes to ignore when
   -- displaying trailing whitespace
-  ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help', 'neo-tree', 'norg', 'alpha' },
+  ignored_filetypes = { 'TelescopePrompt', 'TelescopeResults', 'Trouble', 'help', 'neo-tree', 'norg', 'alpha', 'dashboad', 'blink-cmp-menu', 'blink-cmp-signature', 'blink-cmp-window', 'blink-cmp-documentation' },
 
   -- `ignore_terminal` configures whether to ignore terminal buffers
   ignore_terminal = true,
 }
+
