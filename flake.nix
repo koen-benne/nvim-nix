@@ -7,10 +7,6 @@
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
     # Add bleeding-edge plugins here.
-    supermaven-nvim = {
-      url = "github:supermaven-inc/supermaven-nvim";
-      flake = false;
-    };
     ts-error-translator-nvim = {
       url = "github:dmmulroy/ts-error-translator.nvim";
       flake = false;

@@ -28,7 +28,7 @@ with final.pkgs.lib; let
     SchemaStore-nvim
 
     (mkNvimPlugin inputs.ts-error-translator-nvim "ts-error-translator.nvim") # Error translator
-    (mkNvimPlugin inputs.supermaven-nvim "supermaven-nvim") # Supermaven
+    supermaven-nvim
     # { plugin = copilot-lua;  }
 
     # Completion
