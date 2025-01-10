@@ -18,7 +18,7 @@ local function load_buffer_plugins(args)
     buffer_plugins_loaded = true
 
     vim.defer_fn(function()
-      require('user.lazy.cmp')
+      require('user.lazy.blink')
       require('user.lazy.lazy-lsp')
       require('user.lazy.nvim-colorizer')
       require('user.lazy.illuminate')

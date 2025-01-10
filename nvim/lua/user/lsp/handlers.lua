@@ -90,12 +90,13 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-local status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+local status_ok, blink = pcall(require, 'blink.cmp')
 if not status_ok then
+  vim.notify('Blink is not installed!')
   return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+M.capabilities = blink.get_lsp_capabilities(capabilities)
 
 function M.enable_format_on_save()
   vim.cmd([[

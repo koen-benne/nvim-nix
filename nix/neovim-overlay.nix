@@ -32,17 +32,9 @@ with final.pkgs.lib; let
     # { plugin = copilot-lua;  }
 
     # Completion
-    nvim-cmp
-    cmp_luasnip # Snippets autocompletion extension for nvim-cmp
     luasnip # Snippets
-    cmp-nvim-lsp # LSP as completion source
-    cmp-nvim-lsp-signature-help
-    cmp-buffer # Current buffer as completion source
-    cmp-path # File paths as completion source
-    cmp-nvim-lua # Neovim lua API as completion source
-    cmp-cmdline # cmp command line suggestions
-    cmp-cmdline-history # cmp command line history suggestions
     crates-nvim
+    blink-cmp
 
     # Debugging
     nvim-dap
