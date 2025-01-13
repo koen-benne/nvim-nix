@@ -18,11 +18,6 @@ if not blink_status_ok then
   return
 end
 
--- TODO: convert this to blink
-vim.api.nvim_set_hl(0, 'CmpItemKindTabnine', { fg = '#CA42F0' })
-vim.api.nvim_set_hl(0, 'CmpItemKindEmoji', { fg = '#FDE030' })
-vim.api.nvim_set_hl(0, 'CmpItemKindCrate', { fg = '#F64D00' })
-
 blink.setup({
   enabled = function()
     return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
