@@ -17,7 +17,7 @@ with final.pkgs.lib; let
   # This is the helper function that builds the Neovim derivation.
   mkNeovim = pkgs.callPackage ./mkNeovim.nix {inherit pkgs-wrapNeovim;};
 
-  all-plugins = with pkgs.vimPlugins; [
+  all-plugins = with pkgs-wrapNeovim.vimPlugins; [
     # plugins from nixpkgs go in here.
     # packadd needs to be called for each of the optional plugins (the default)
 
