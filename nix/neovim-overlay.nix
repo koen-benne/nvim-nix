@@ -21,6 +21,8 @@ with final.pkgs.lib; let
     # plugins from nixpkgs go in here.
     # packadd needs to be called for each of the optional plugins (the default)
 
+    zotcite
+
     # LSP
     lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
     nvim-lspconfig # Auto config lsp
