@@ -21,15 +21,17 @@ lazylsp.setup {
   -- Alternatively specify preferred servers for a filetype (others will be ignored).
   preferred_servers = {
     markdown = {},
-    python = { 'pyright', 'ruff_lsp' },
+    python = { 'basedpyright', 'ruff_lsp' },
     lua = { 'lua_ls' },
     nix = { 'nil_ls', 'nixd' },
     rust = { 'rust_analyzer' },
     json = { 'jsonls' },
     css = { 'cssmodules' },
-    typescript = { 'tsserver' },
-    typescriptreact = { 'tsserver' },
-    php = { 'intelephense' },
+    javascript = { 'ts_ls', 'eslint' },
+    javascriptreact = { 'ts_ls', 'eslint' },
+    typescript = { 'ts_ls', 'eslint' },
+    typescriptreact = { 'ts_ls', 'eslint' },
+    php = { 'intelephense', 'psalm' },
   },
   prefer_local = true, -- Prefer locally installed servers over nix-shell
   -- Default config passed to all servers to specify on_attach callback and other options.
