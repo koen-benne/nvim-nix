@@ -21,6 +21,11 @@ with final.pkgs.lib; let
     # plugins from nixpkgs go in here.
     # packadd needs to be called for each of the optional plugins (the default)
 
+    {
+      plugin = snacks-nvim;
+      optional = false;
+    }
+
     zotcite
 
     # LSP
@@ -138,6 +143,10 @@ with final.pkgs.lib; let
       optional = false;
     }
     {
+      plugin = mini-nvim;
+      optional = false;
+    }
+    {
       plugin = promise-async;
       optional = false;
     }
@@ -149,7 +158,6 @@ with final.pkgs.lib; let
       plugin = nui-nvim;
       optional = false;
     }
-
     {
       plugin = project-nvim; # Project management
       optional = false;
