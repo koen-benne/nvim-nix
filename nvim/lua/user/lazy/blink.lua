@@ -6,7 +6,6 @@ vim.g.did_load_blink_plugin = true
 vim.cmd('packadd blink.cmp')
 vim.cmd('packadd lazy-lsp.nvim')
 vim.cmd('packadd nvim-lspconfig')
-vim.cmd('packadd lspsaga.nvim')
 vim.cmd('packadd SchemaStore.nvim')
 vim.cmd('packadd ts-error-translator.nvim')
 vim.cmd('packadd luasnip')

@@ -26,7 +26,6 @@ with final.pkgs.lib; let
     # LSP
     lazy-lsp-nvim # Uses nix for lsp stuff so that I don't have to install a bunch of stuff globally
     nvim-lspconfig # Auto config lsp
-    lspsaga-nvim
     SchemaStore-nvim
 
     (mkNvimPlugin inputs.ts-error-translator-nvim "ts-error-translator.nvim") # Error translator
